@@ -180,3 +180,38 @@ const calcDaysPassed = (date1, date2) =>
 
 const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
 console.log(days1);
+
+// *********************** Internationalizing Dates *************************
+// const now2 = new Date();
+
+// console.log(new Intl.DateTimeFormat('en-GB').format(now));
+
+// const options = {
+//   hour: 'numeric',
+//   minute: 'numeric',
+//   day: 'numeric',
+//   month: 'long',
+//   year: 'numeric',
+//   weekday: 'long',
+// };
+
+// const locale = navigator.language; // to know which language in browser, to make automatically this format for dates
+// console.log(locale);
+// console.log(new Intl.DateTimeFormat(locale, options).format(now));
+
+// ************************** Internationalizing Numbers ********************
+const num2 = 387495.23;
+
+const options = {
+  style: 'currency',
+  unit: 'celsius',
+  currency: 'EUR',
+  // useGrouping: false
+};
+console.log('US: ', new Intl.NumberFormat('en-US', options).format(num2));
+console.log('DE: ', new Intl.NumberFormat('de-DE', options).format(num2));
+console.log('LT: ', new Intl.NumberFormat('lt-LT', options).format(num2));
+// console.log(
+//   'Browser: ',
+//   new Intl.NumberFormat(navigator.language).format(num2)
+// );
