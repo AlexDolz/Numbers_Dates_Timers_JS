@@ -215,3 +215,28 @@ console.log('LT: ', new Intl.NumberFormat('lt-LT', options).format(num2));
 //   'Browser: ',
 //   new Intl.NumberFormat(navigator.language).format(num2)
 // );
+
+// *********************** Timers: setInterval and setTimeout ***************
+
+// setTimeout
+const ingridients = ['olives', 'spinach'];
+
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2}`),
+  3000,
+  ...ingridients
+);
+console.log('Waiting...'); //will be first in console log
+
+if (ingridients.includes('spinach')) {
+  clearTimeout(pizzaTimer);
+}
+
+setInterval;
+setInterval(() => {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const sec = now.getSeconds();
+  console.log(`Time is ${hours}:${minutes}:${sec}`);
+}, 1000); // every one sec
